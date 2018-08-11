@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Plug Proof of Concept</title>
+  
+  
+  <link rel='stylesheet' href='http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div class="main-box">
+  <div class="slider-cont">
+    <div class="signup-slider">
+      <div class="img-txt">
+        <div class="img-layer"></div>
+        <h1>We use smart plugs for regulating your daily electricity and...</h1>
+        <img src="images/smart_plug.jpg"/>
+      </div>
+      <div class="img-txt">
+        <div class="img-layer"></div>
+        <h1>pay you for your nobel initiatives for saving electricity!</h1>
+        <img src="images/eth.png"/>
+      </div>
+      <div class="img-txt">
+        <div class="img-layer"></div>
+        <h1>Join US Now!</h1>
+        <img src=""/>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="form-cont">
+
+    <div class="top-buttons">
+      <button class="to-signup top-active-button">
+        Sign Up
+      </button>
+      <button class="to-signin">
+        Sign In
+      </button>
+    </div>
+    
+    <div class="form form-signup">
+      <form action="http://blockchain.gachon.ac.kr/user/signup
+" enctype="application/x-www-form-urlencoded" method="POST">
+        <lable>FULL NMAE</lable>
+        <input type="text" 
+               placeholder="Your full name"
+               name = "user_id">
+        <lable>E-MAIL</lable>
+        <input type="email" 
+               placeholder="Your e-mail"
+               name = "user_email">
+        <lable>PASSWORD</lable>
+        <input type="password" 
+               placeholder="Your password"
+               name = "user_pass">
+        <p class="terms">
+          <input type="checkbox">
+          I agree all statments in 
+          <a href="#" class="lined-link">terms of service</a>
+        </p>
+        <input type="submit"
+               class="form-btn"
+               value="Sign Up"/>
+        <a href="#" class="lined-link to-signin-link">I'm already member</a>
+      </form>
+    </div>
+
+    <div class="form form-signin">
+      <form action="http://blockchain.gachon.ac.kr/user/login
+" enctype="application/x-www-form-urlencoded" method="post">
+        <lable>E-MAIL</lable>
+        <input type="email" 
+               placeholder="Your e-mail"
+               name = "user_id">
+        <lable>PASSWORD</lable>
+        <input type="password" 
+               placeholder="Your password"
+               name = "user_pass">
+        <input type="submit"
+               class="form-btn"
+               value="Sign In"/>
+               
+               
+        <a href="#" class="lined-link to-signup-link">Create new account</a>
+      </form>
+    </div>
+  </div>
+  <div class="clear-fix"></div>
+</div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

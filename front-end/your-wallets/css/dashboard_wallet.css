@@ -1,0 +1,135 @@
+/*  
+  author Alexandre dos Santos Soares 
+  gitHub: https://github.com/alexandrejuk;
+*/
+
+body {
+  background: #ECF0F7;
+  font-family: arial;
+  color: #FFF;
+}
+
+div.card {
+  min-width: 400px;
+  min-height: 510px;
+  max-width: 400px;
+  max-height: 730px;
+  margin: 20px auto;
+  width: 40%;
+  height: 70%;
+  background: #27263F;  
+  border-radius: 3px;
+  box-shadow: 0 4px 30px #666;
+}
+
+.card-header nav {
+  color: #ABB3C6;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 35px;
+}
+
+div a.actived {
+  color: #575F72;
+}
+
+div.content-header {
+  margin-top: 35px;
+  text-align: center;
+}
+
+div.value-main span {
+  font-size: 1.8em; 
+}
+
+div.value-main {
+  font-size: 1.4em; 
+}
+
+div.rating {
+  padding: 4px;
+  width: 130px;
+  border: 3px;
+  margin: 8px auto;
+  background: #3C2442;
+  color: #F80065;
+}
+
+div.title {
+  color: #575F72;
+  margin-top: 50px; 
+  padding: 15px;
+}
+
+div.card-detail {
+  margin-top: 15px;
+  background-color: #2D2B4B;
+  width: 100%;
+  height: 80px;
+  border-radius: 3px;
+}
+
+div.card-detail:hover {
+  background: #292945;
+  cursor: pointer;
+}
+  
+
+div.main-content {
+  padding: 15px;
+}
+
+div.card-detail-title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.arrow-down {
+  color: #F80065;
+}
+
+.arrow-up {
+  color: #00FFFF;
+}
+
+div.cards-special {
+  display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+div.special-card {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2D2B4B;
+  width: 48%;
+  height: 120px;
+  border-radius: 3px;
+  box-shadow: 1px 1px px #C0C0C0;
+}
+
+div.special-card:hover  {
+  background: #292945;
+  cursor: pointer;
+}
+
+.value {
+  color: #575F72;
+  font-size: 0.9em;
+}
+
+.card-special-title div {
+  margin-top: 25px;  
+}
+
+div span { 
+  color: #575F72;
+  font-size: 0.9em;
+}
+
+.value-main span {
+  color: #FFF;
+}
