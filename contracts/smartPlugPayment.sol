@@ -1,54 +1,34 @@
-pragma solidity ^0.4.17;
-//   contract is invoked from a trusted and verified source
-//   args{hash id, int usage, int limit, address addr }
-//   store ethers
-//   pay ethers to the user
-//   generate balance if less electricity consumed
-//   transfer the balance to the users address
-//   close
+pragma solidity ^0.4.21;
+
 contract smartPlugPayment{
-    string id;
-    uint16 limit;
-    uint32 prev;
-    uint32 curr;
-    uint32 electron;
-    //constructor funciton
-    constructor (string _id) public{
-        id = _id;
+    address public id;
+
+    //constructor function
+    constructor () public{
+        id = msg.sender;
     }
-    //set previous usage value
-    function setPrev(uint32 _prev) public{
-        prev = _prev;
+
+    modifier adminAccess(address _id) {
+        require(msg.sender == _id, "Sender not authorized.");
+        _;
     }
-    //set current usage value
-    function setCurr(uint32 _curr) public{
-        curr = _curr;
+
+    //deposits ether in the contract and returns sender address
+    function deposit() payable public returns(address){
+      require(msg.value == 1000000 wei);
+      return msg.sender;
     }
-    //set limit
-    function setLimit(uint16 _limit) public{
-        limit = _limit;
-    }
-    //set electron
-    function setElectron(uint32 _elec) public{
-        electron = _elec;
-    }
-    //deposits ether in the contract
-    function deposit() payable public{
-    }
+
      //function to get the current balance of the contract
     function getBalance() public view returns(uint256){
         return address(this).balance;
     }
-    function payUser(address user_addr) payable public {
-        user_addr.transfer(msg.value);
-    }
-    function generateMoney() public view returns(uint32){
-         //logic for coin generation and payment
-         if(curr < prev && curr <= limit){
-             return (electron*(1 - 1/(prev - curr)));
-         }
-         else{
-             return 0;
-         }
+
+    //pay the users
+    function payUser(address[] user_addr) public {
+        uint amount = address(this).balance / user_addr.length;
+        for (uint i = 0; i < user_addr.length; i++) {
+            user_addr[i].transfer(amount);
+        }
     }
 }

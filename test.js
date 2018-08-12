@@ -5,17 +5,16 @@ let smartPlug;
 let accounts;
 let web3;
 
-const display = async () => {
+const init = async () => {
   smartPlug = await mod.contract;
   web3 = await mod.returnweb3;
   accounts = await web3.eth.getAccounts();
 };
 
-const deposited = async () => {
-  await console.log("Account: ", accounts[1]);
+const deposit = async (index) => {
   await smartPlug.methods.deposit().send({
-    from: accounts[1],
-    value: web3.utils.toWei('1', 'ether')
+    from: accounts[index],
+    value: 1000000
   });
   await console.log("Deposit successful")
 }
@@ -27,27 +26,17 @@ const getBalance = async () => {
   await console.log(balance);
 }
 
-const setElectron = async () => {
-  await smartPlug.methods.setElectron(balance).call({
-    from: accounts[2]
+const payUser = async (address[]) => {
+  await smartPlug.methods.payUser.call({
+    from: accounts[0]
   });
-}
-
-const setCurr = async () => {
-  await smartPlug.methods.setCurr(1).call({
-    from: accounts[2]
-  });
-}
-
-const setPrev = async () => {
-  await smartPlug.methods.setPrev(10).call({
-    from: accounts[2]
-  });
+  console.log("Users paid");
 }
 
 const test = async () => {
-  await display();
-  await deposited();
+  await init();
+  await deposit();
   await getBalance();
 }
+
 test();
